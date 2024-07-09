@@ -61,7 +61,7 @@ app.get("/population", async (req: Request, res: Response) => {
     res.status(500).send("Internal server error");
   }
 });
-
+// empty
 ///// forcast
 
 type condition = {
