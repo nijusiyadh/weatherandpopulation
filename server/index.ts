@@ -61,8 +61,6 @@ app.get("/population", async (req: Request, res: Response) => {
     res.status(500).send("Internal server error");
   }
 });
-// empty
-///// forcast
 
 type condition = {
   text: string;
@@ -100,7 +98,7 @@ async function fetchForcastData(city: string) {
     const current: current = res.data.current;
     const forecast: forecastday = res.data.forecast.forecastday;
 
-    return {current: current,forecast: forecast};
+    return { current: current, forecast: forecast };
   } catch (error) {
     console.error("Error fetching population data:", error);
     return null;
@@ -110,12 +108,12 @@ async function fetchForcastData(city: string) {
 app.get("/population/weather", async (req: Request, res: Response) => {
   const city = req.query.city?.toString();
   console.log(city);
-  
+
   try {
     const forcast = await fetchForcastData(city);
 
     // console.log(forcast);
-    
+
     if (forcast) {
       res.send(JSON.stringify(forcast));
     } else {

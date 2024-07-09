@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import CityData from "../Components/WeatherPageComponents/CityData";
 import WeatherData from "../Components/WeatherPageComponents/WeatherData";
 import { PopulationData } from "../Types/PopulationDataTypes";
 import axios from "axios";
@@ -166,9 +165,6 @@ function WeatherPage() {
     setisDay(weatherData.current.is_day);
     setforecast(weatherData.forecast);
     setdaysforecast(weatherData.forecast.day);
-
-    // console.log(weatherData.current.feelslike_c);
-    // population = CityData.populationCounts;
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -177,16 +173,9 @@ function WeatherPage() {
     console.log(city);
     fetchData(city);
     fetchWeatherData(city);
-    // setCityName(CityData.populationCounts);
-    // population = CityData.populationCounts;
     setCity("");
   }
 
-
-
-
-
-  
   return (
     <div className=" h-screen flex items-center justify-center text-white bg-gradient-to-r from-cyan-500 to-blue-500">
       <div className="w-[800px] h-[600px] bg-white/50 shadow-lg rounded-lg flex p-6 gap-5">

@@ -1,14 +1,10 @@
-// import SunLogo from '../../assets/01d.svg';
-// import CloudLogo from '../../assets/03d.svg';
-// import RainLogo from '../../assets/10d.svg';
-
-interface WeatherCardProps {
+type WeatherCardProps = {
   day: string;
   tempMax: number;
   tempMin: number;
   status: string;
   icon: string;
-}
+};
 
 function WeatherCard({
   day,

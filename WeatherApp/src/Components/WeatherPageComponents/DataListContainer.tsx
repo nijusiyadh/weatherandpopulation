@@ -1,15 +1,12 @@
-import React from "react";
-
 interface DataListContainerProps {
-    title: string | number,
-    value: string | number,
+  title: string | number;
+  value: string | number;
 }
 
 type condition = {
   text: string;
   icon: string;
 };
-
 
 type day = {
   maxtemp_c: number;
@@ -22,7 +19,7 @@ type forecastday = {
   day: day;
 };
 
-function DataListContainer({title,value}: DataListContainerProps) {
+function DataListContainer({ title, value }: DataListContainerProps) {
   return (
     <div className=" flex items-end justify-between w-full mt-2 rounded-md w-full h-5 py-4 px-3 items-center font-bold">
       <span>{title}</span>

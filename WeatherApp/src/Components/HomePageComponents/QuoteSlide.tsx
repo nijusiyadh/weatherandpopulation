@@ -3,12 +3,17 @@ import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { useNavigate } from "react-router-dom";
 
+type QuoteProps = {
+  id: number;
+  quote: string;
+  author: string;
+};
+
 const baseURL = "https://dummyjson.com/quotes/random";
 
 const QuoteSlide = () => {
-  const [quote, setQuote] = useState(null);
+  const [quote, setQuote] = useState<QuoteProps | null>(null);
   const navigate = useNavigate();
-  // const [time,setTime ] = useState<number>(0);
 
   useEffect(() => {
     const getQuotes = async function () {

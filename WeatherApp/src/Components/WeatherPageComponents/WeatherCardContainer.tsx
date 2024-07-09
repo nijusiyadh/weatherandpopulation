@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
 
 type condition = {
@@ -21,18 +20,14 @@ function WeatherCardContainer({ forecast }: { forecast: forecast[] }) {
   // forecastarray = forecast.map(val => val);
   console.log(forecast);
 
-  let dateStr:string;
-  let day:string;
+  let dateStr: string;
+  let day: string;
 
-
-  function getDayName(dateStr:string) {
+  function getDayName(dateStr: string) {
     const date = new Date(dateStr);
-    return date.toLocaleDateString( "en-IN", { weekday: "long" });
+    return date.toLocaleDateString("en-IN", { weekday: "long" });
   }
 
-  
-  
-  
   // const [forecasts,setForecasts ]= useState<forecast[]>(forecastarray);
 
   // useEffect(() => {
@@ -42,18 +37,21 @@ function WeatherCardContainer({ forecast }: { forecast: forecast[] }) {
 
   return (
     <div className="grid w-full h-fit grid-cols-3 gap-1">
-      {forecast.map((val) => (
-        dateStr = val.date,
-        day = getDayName(dateStr),
-        
-        <WeatherCard
-          icon={val.day.condition.icon}
-          day={day}
-          status={val.day.condition.text}
-          tempMax={val.day.maxtemp_c}
-          tempMin={val.day.mintemp_c}
-        />
-      ))}
+      {forecast.map(
+        (val) => (
+          (dateStr = val.date),
+          (day = getDayName(dateStr)),
+          (
+            <WeatherCard
+              icon={val.day.condition.icon}
+              day={day}
+              status={val.day.condition.text}
+              tempMax={val.day.maxtemp_c}
+              tempMin={val.day.mintemp_c}
+            />
+          )
+        )
+      )}
     </div>
   );
 }

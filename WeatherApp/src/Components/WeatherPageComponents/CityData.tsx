@@ -36,12 +36,12 @@ const months: string[] = [
   "December",
 ];
 
-let year: string = "";
-let month: string = "";
+let year: number;
+let month: number;
 let day: number;
-let curdate: string = "";
-let hour: string = "";
-let minute: string = "";
+let curdate: number;
+let hour: number;
+let minute: number;
 let ampm: string = "";
 
 const getTodaysDate = () => {

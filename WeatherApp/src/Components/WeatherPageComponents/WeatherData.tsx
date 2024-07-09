@@ -1,4 +1,3 @@
-import RainIcon from "../../assets/rainy-day.png";
 import { FaTemperatureHalf } from "react-icons/fa6";
 import { GiWaterDrop } from "react-icons/gi";
 import { FaWind } from "react-icons/fa6";
@@ -24,7 +23,7 @@ type current = {
   forecast: forecastday;
   day: day;
   icon: string;
-  status: boolean,
+  status: boolean;
 };
 
 type day = {
@@ -41,19 +40,16 @@ type forecastday = {
 export default function WeatherData({
   icon,
   temp_c,
-  is_day,
   condition,
   wind_kph,
   humidity,
   feelslike_c,
   forecast,
-  day,
   status,
 }: current) {
   // console.log(typeof current.temp_c);
 
-  return (
-    status ?
+  return status ? (
     <div className="grow h-full  rounded-lg overflow-hidden gap-2">
       <div className="flex w-full gap-2 justify-between">
         <div className="border-solid border-2 border-white w-[48%] h-[200px] rounded-lg flex items-center justify-center">
@@ -93,6 +89,10 @@ export default function WeatherData({
         <WeatherCardContainer forecast={forecast} />
       </div>
     </div>
-    : <div className= " text-2xl font-bold  grow flex items-center justify-center"> No data Found!,Try Again</div>
+  ) : (
+    <div className=" text-2xl font-bold  grow flex items-center justify-center">
+      {" "}
+      No data Found!,Try Again
+    </div>
   );
 }
